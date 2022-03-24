@@ -1,0 +1,875 @@
+{
+  "contractName": "IAMM",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "AMM__Already_inited",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "AMM__Not_Inited",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "tokenIn",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "tokenOut",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "Swap",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "isRev",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        }
+      ],
+      "name": "swap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"AMM__Already_inited\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AMM__Not_Inited\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenIn\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenOut\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"Swap\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"isRev\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"}],\"name\":\"swap\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Kaito\",\"kind\":\"dev\",\"methods\":{\"swap(bool,uint256)\":{\"params\":{\"amountIn\":\"the amount of tokens deposited\"}}},\"title\":\"Interface of AMM contract\",\"version\":1},\"userdoc\":{\"errors\":{\"AMM__Already_inited()\":[{\"notice\":\"==== ERRORS ==== ///\"}]},\"events\":{\"Swap(address,address,address,uint256,uint256)\":{\"notice\":\"==== EVENTS ==== ///\"}},\"kind\":\"user\",\"methods\":{\"swap(bool,uint256)\":{\"notice\":\"@param isRev true if and only if user want to swap from token1 to token0\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IAMM.sol\":\"IAMM\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/IAMM.sol\":{\"keccak256\":\"0x8c56c70d3823b373636d42e5892cfc0624abfbb81f3cf78fea1fa9c89a8cf2d9\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://cfa8dc2918f8e6952146dfbdd9c27afc40e36a78fdef0f59077f40569c781540\",\"dweb:/ipfs/QmaxA29oikw8GNijud9qqRhbqziU5UmTSf2YBmKhjDxFtV\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: BUSL-1.1\r\npragma solidity >=0.8.6;\r\npragma experimental ABIEncoderV2;\r\n\r\n/// @title    Interface of AMM contract\r\n/// @author   Kaito\r\ninterface IAMM {\r\n\r\n    /// @notice\r\n    /// @param isRev true if and only if user want to swap from token1 to token0\r\n    /// @param amountIn the amount of tokens deposited\r\n    function swap(bool isRev, uint256 amountIn) external returns (uint256);\r\n\r\n    /// ==== EVENTS ==== ///\r\n    event Swap(address indexed user, address tokenIn, address tokenOut, uint256 amountIn, uint256 amountOut);\r\n\r\n    /// ==== ERRORS ==== ///\r\n    error AMM__Already_inited();\r\n    error AMM__Not_Inited();\r\n}\r\n",
+  "sourcePath": "E:\\JobHunting\\20220323_PerputalProtocol\\SimpleAMM\\contracts\\interfaces\\IAMM.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IAMM.sol",
+    "exportedSymbols": {
+      "IAMM": [
+        3759
+      ]
+    },
+    "id": 3760,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3728,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:24:21"
+      },
+      {
+        "id": 3729,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "64:33:21"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3730,
+          "nodeType": "StructuredDocumentation",
+          "src": "101:62:21",
+          "text": "@title    Interface of AMM contract\n @author   Kaito"
+        },
+        "fullyImplemented": false,
+        "id": 3759,
+        "linearizedBaseContracts": [
+          3759
+        ],
+        "name": "IAMM",
+        "nameLocation": "173:4:21",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 3731,
+              "nodeType": "StructuredDocumentation",
+              "src": "187:149:21",
+              "text": "@notice\n @param isRev true if and only if user want to swap from token1 to token0\n @param amountIn the amount of tokens deposited"
+            },
+            "functionSelector": "c037646a",
+            "id": 3740,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "swap",
+            "nameLocation": "351:4:21",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3736,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3733,
+                  "mutability": "mutable",
+                  "name": "isRev",
+                  "nameLocation": "361:5:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3740,
+                  "src": "356:10:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3732,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "356:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3735,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "376:8:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3740,
+                  "src": "368:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3734,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "368:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "355:30:21"
+            },
+            "returnParameters": {
+              "id": 3739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3738,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3740,
+                  "src": "404:7:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3737,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "404:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "403:9:21"
+            },
+            "scope": 3759,
+            "src": "342:71:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 3741,
+              "nodeType": "StructuredDocumentation",
+              "src": "421:24:21",
+              "text": "==== EVENTS ==== ///"
+            },
+            "id": 3753,
+            "name": "Swap",
+            "nameLocation": "457:4:21",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3752,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3743,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "478:4:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "462:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3742,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3745,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "tokenIn",
+                  "nameLocation": "492:7:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "484:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3744,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "484:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3747,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "tokenOut",
+                  "nameLocation": "509:8:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "501:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3746,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "501:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3749,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "527:8:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "519:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3748,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "519:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3751,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "545:9:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "537:17:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3750,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "537:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:94:21"
+            },
+            "src": "451:105:21"
+          },
+          {
+            "documentation": {
+              "id": 3754,
+              "nodeType": "StructuredDocumentation",
+              "src": "564:24:21",
+              "text": "==== ERRORS ==== ///"
+            },
+            "id": 3756,
+            "name": "AMM__Already_inited",
+            "nameLocation": "600:19:21",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 3755,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "619:2:21"
+            },
+            "src": "594:28:21"
+          },
+          {
+            "id": 3758,
+            "name": "AMM__Not_Inited",
+            "nameLocation": "634:15:21",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 3757,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "649:2:21"
+            },
+            "src": "628:24:21"
+          }
+        ],
+        "scope": 3760,
+        "src": "163:492:21",
+        "usedErrors": [
+          3756,
+          3758
+        ]
+      }
+    ],
+    "src": "38:619:21"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/interfaces/IAMM.sol",
+    "exportedSymbols": {
+      "IAMM": [
+        3759
+      ]
+    },
+    "id": 3760,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3728,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:24:21"
+      },
+      {
+        "id": 3729,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "64:33:21"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3730,
+          "nodeType": "StructuredDocumentation",
+          "src": "101:62:21",
+          "text": "@title    Interface of AMM contract\n @author   Kaito"
+        },
+        "fullyImplemented": false,
+        "id": 3759,
+        "linearizedBaseContracts": [
+          3759
+        ],
+        "name": "IAMM",
+        "nameLocation": "173:4:21",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 3731,
+              "nodeType": "StructuredDocumentation",
+              "src": "187:149:21",
+              "text": "@notice\n @param isRev true if and only if user want to swap from token1 to token0\n @param amountIn the amount of tokens deposited"
+            },
+            "functionSelector": "c037646a",
+            "id": 3740,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "swap",
+            "nameLocation": "351:4:21",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3736,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3733,
+                  "mutability": "mutable",
+                  "name": "isRev",
+                  "nameLocation": "361:5:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3740,
+                  "src": "356:10:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3732,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "356:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3735,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "376:8:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3740,
+                  "src": "368:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3734,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "368:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "355:30:21"
+            },
+            "returnParameters": {
+              "id": 3739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3738,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3740,
+                  "src": "404:7:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3737,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "404:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "403:9:21"
+            },
+            "scope": 3759,
+            "src": "342:71:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 3741,
+              "nodeType": "StructuredDocumentation",
+              "src": "421:24:21",
+              "text": "==== EVENTS ==== ///"
+            },
+            "id": 3753,
+            "name": "Swap",
+            "nameLocation": "457:4:21",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3752,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3743,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "478:4:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "462:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3742,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3745,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "tokenIn",
+                  "nameLocation": "492:7:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "484:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3744,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "484:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3747,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "tokenOut",
+                  "nameLocation": "509:8:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "501:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3746,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "501:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3749,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "527:8:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "519:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3748,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "519:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3751,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "545:9:21",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3753,
+                  "src": "537:17:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3750,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "537:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:94:21"
+            },
+            "src": "451:105:21"
+          },
+          {
+            "documentation": {
+              "id": 3754,
+              "nodeType": "StructuredDocumentation",
+              "src": "564:24:21",
+              "text": "==== ERRORS ==== ///"
+            },
+            "id": 3756,
+            "name": "AMM__Already_inited",
+            "nameLocation": "600:19:21",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 3755,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "619:2:21"
+            },
+            "src": "594:28:21"
+          },
+          {
+            "id": 3758,
+            "name": "AMM__Not_Inited",
+            "nameLocation": "634:15:21",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 3757,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "649:2:21"
+            },
+            "src": "628:24:21"
+          }
+        ],
+        "scope": 3760,
+        "src": "163:492:21",
+        "usedErrors": [
+          3756,
+          3758
+        ]
+      }
+    ],
+    "src": "38:619:21"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-03-24T18:09:25.514Z",
+  "devdoc": {
+    "author": "Kaito",
+    "kind": "dev",
+    "methods": {
+      "swap(bool,uint256)": {
+        "params": {
+          "amountIn": "the amount of tokens deposited"
+        }
+      }
+    },
+    "title": "Interface of AMM contract",
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "AMM__Already_inited()": [
+        {
+          "notice": "==== ERRORS ==== ///"
+        }
+      ]
+    },
+    "events": {
+      "Swap(address,address,address,uint256,uint256)": {
+        "notice": "==== EVENTS ==== ///"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "swap(bool,uint256)": {
+        "notice": "@param isRev true if and only if user want to swap from token1 to token0"
+      }
+    },
+    "version": 1
+  }
+}
