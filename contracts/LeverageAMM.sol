@@ -24,10 +24,7 @@ contract LeverageAMM is ILeverageAMM, ReentrancyGuard {
     bool inited;
 
     constructor() {
-        r0 = 0;
-        r1 = 0;
         maxLeverage = 10;
-        inited = false;
     }
 
     modifier isInited() {

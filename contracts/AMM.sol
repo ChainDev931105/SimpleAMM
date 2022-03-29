@@ -18,11 +18,7 @@ contract AMM is IAMM, ReentrancyGuard {
 
     bool inited;
 
-    constructor() {
-        r0 = 0;
-        r1 = 0;
-        inited = false;
-    }
+    constructor() { }
 
     modifier isInited() {
         if (!inited) revert AMM__Not_Inited();
@@ -47,7 +43,6 @@ contract AMM is IAMM, ReentrancyGuard {
         override 
         returns (uint256 amountOut) 
     {
-        amountOut = 0;
         address user = msg.sender;
 
         if (!isRev) (r0, r1, amountOut) = _swap(user, token0, token1, r0, r1, amountIn);
